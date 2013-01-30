@@ -1,0 +1,47 @@
+!!!
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %title= @title
+%link{:href => '/zurb/app.css', :media => 'screen', :rel => 'stylesheet'}
+  %link{:href => '/zurb/foundation.min.css', :media => 'screen', :rel => 'stylesheet'}
+  %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
+  = haml :analytics, :layout => false
+  <script src="zurb/modernizr.foundation.js"></script>
+
+%body{ :class => @body_class }
+  .row
+    .twelve.columns
+      %h1
+        =@heading
+        .subheader=@subtitle
+
+  .row
+    .nine.columns{role: "content"}
+      =yield
+    %aside.three.columns
+      .panel
+        %h5 About Me!
+        %img{src: "/attachments/me-and-valia.jpg"}
+        %p I'm a builder of cool things, and (occasionally) writer of words.
+        %p I have an amazing wife and daughter and tend to live in Austin, TX, though the probability of finding me there at any given time is not incredibly high.
+  %footer.row
+    .twelve.columns
+      %hr
+      .row
+        .six.columns
+          %p &copy; Content copyright Justin Litchfield - 2013
+        .six.columns
+          Some links
+
+  <!-- Included JS Files (Compressed) -->
+  <script src="zurb/jquery.js"></script>
+  <script src="zurb/foundation.min.js"></script>
+
+  <!-- Initialize JS Plugins -->
+  <script src="zurb/app.js"></script>
