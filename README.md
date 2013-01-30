@@ -14,5 +14,8 @@ And make sure your config/config.yml file (or NESTA_THEME env var) specifies the
 
 The Nesta-approved installation method is to do:
 
-mysite$ nesta theme:install git://github.com/litch/nesta-zurb-foundation-theme.git
+    $ nesta theme:install git://github.com/litch/nesta-zurb-foundation-theme.git
+
 Future updates might not be easily propagated
+
+MIT License
